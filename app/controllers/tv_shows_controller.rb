@@ -2,7 +2,7 @@ class TvShowController < ApplicationController
 	before_action :set_tv_show, only: [:show, :update, :destroy]
 
   def index
-    render json: TV_Show.all, status: 200
+    render json: TvShow.all, status: 200
   end
 
   def show
@@ -10,7 +10,7 @@ class TvShowController < ApplicationController
   end
 
   def create
-    @tv_show = TV_Show.new( params )
+    @tv_show = TvShow.new( params )
     render json: @tv_show.to_json, status: 200 if @tv_show.save
   end
 
@@ -24,11 +24,11 @@ class TvShowController < ApplicationController
 
   private
 
-  def set_grumble
-    @tv_show = TV_Show.find(params[:id])
+  def set_tv_show
+    @tv_show = TvShow.find(params[:id])
   end
 
-  def grumble_params
+  def tv_show_params
     params.require(:tv_show).permit(:name, :description, :image, :day, :time, :channel)
   end
 end
