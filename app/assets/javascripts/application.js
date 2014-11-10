@@ -22,3 +22,8 @@
 //= require_tree ./backbone/collections
 //= require_tree ./backbone/views
 //= require_tree .
+
+$(document).ready(function(){
+  App.router = new App.Router();
+  Backbone.history.start();
+});
