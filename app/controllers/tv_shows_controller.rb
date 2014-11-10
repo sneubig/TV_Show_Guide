@@ -1,5 +1,6 @@
-class TvShowController < ApplicationController
-	before_action :set_tv_show, only: [:show, :update, :destroy]
+class TvShowsController < ApplicationController
+	
+  before_action :set_tv_show, only: [:show, :update, :destroy]
 
   def index
     render json: TvShow.all, status: 200
